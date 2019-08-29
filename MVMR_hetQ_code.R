@@ -15,7 +15,7 @@
 
 #L is the total number of snps in the analysis
 
-seQ <- (mvmrdata$out.se)^2 + (estbeta1^2)*(mvmrdata$x1.se^2) + (estbeta2^2)*(mvmrdata$x2.se)^2 
+seQ <- (mvmrdata$out.se)^2 + (estbeta1^2)*(mvmrdata$x1.se^2) + (estbeta2^2)*(mvmrdata$x2.se^2) 
 Q_snp <- ((1/seQ)*((mvmrdata$out.beta-(estbeta1*mvmrdata$x1.beta+estbeta2*mvmrdata$x2.beta))^2))
 Q <- sum(Q_snp)
 critical_value <- qchisq(0.05,L-2,lower.tail = FALSE)
